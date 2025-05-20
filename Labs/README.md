@@ -90,8 +90,7 @@
       - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
     ports:
       - 9100:9100
-    networks:
-      - loki 
+ 
   ```  
 - Add the following content to the `server` service:
   ```yaml
@@ -101,8 +100,7 @@
       context:    ../server
     ports:
       - "8090:8090"
-    networks:
-      - loki
+
     depends_on:
       - node-exporter
   ```
@@ -118,8 +116,7 @@
       context:    ../server
     ports:
       - "8090:8090"
-    networks:
-      - loki
+
     depends_on:
       - node-exporter
   ```

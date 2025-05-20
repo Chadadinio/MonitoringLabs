@@ -2,21 +2,21 @@
 
 This lab demonstrates a complete monitoring and logging stack using Docker Compose. The stack includes:
 
+- **Custom Server**: Example Node.js server for demo purposes.
 - **Loki**: Log aggregation system from Grafana Labs.
 - **Grafana**: Visualization and dashboard tool.
 - **Prometheus**: Metrics collection and monitoring system.
 - **Node Exporter**: Exposes hardware and OS metrics for Prometheus.
 - **Portainer**: Docker management UI.
-- **Custom Server**: Example Node.js server for demo purposes.
 
 ## Services Overview
 
+- **Custom Server**: Example app running on [http://localhost:8090](http://localhost:8090).
 - **Loki**: Runs on port `3100`, stores and indexes logs.
 - **Grafana**: Accessible at [http://localhost:3000](http://localhost:3000). Pre-configured for anonymous access and provisioning.
 - **Prometheus**: Accessible at [http://localhost:9090](http://localhost:9090). Scrapes metrics from Node Exporter and the custom server.
 - **Node Exporter**: Exposes metrics at [http://localhost:9100](http://localhost:9100).
 - **Portainer**: Docker management UI at [http://localhost:9000](http://localhost:9000).
-- **Custom Server**: Example app running on [http://localhost:8090](http://localhost:8090).
 
 ## Usage
 

@@ -2,50 +2,50 @@ services:
   # Application server (Node.js example)
   server:
     extends:
-      file: ../resources/compose/server.yaml
+      file: ../../resources/compose/server.yaml
       service: server
     networks:
-      - lab03
+      - lab02
 
   # Loki - log aggregation system
   loki:
     extends:
-      file: ../resources/compose/loki.yaml
+      file: ../../resources/compose/loki.yaml
       service: loki
     networks:
-      - lab03
+      - lab02
 
   # Grafana - visualization and dashboards
   grafana:
     extends:
-      file: ../resources/compose/grafana.yaml
+      file: ../../resources/compose/grafana.yaml
       service: grafana
     networks:
-      - lab03
+      - lab02
 
   # Prometheus - metrics collection and monitoring
   prometheus:
     extends:
-      file: ../resources/compose/prometheus.yaml
+      file: ../../resources/compose/prometheus.yaml
       service: prometheus
     networks:
-      - lab03
+      - lab02
 
   # Node Exporter - exposes hardware and OS metrics to Prometheus
   node-exporter:
     extends:
-      file: ../resources/compose/node-exporter.yaml
+      file: ../../resources/compose/node-exporter.yaml
       service: node-exporter
     networks:
-      - lab03
+      - lab02
 
   # Portainer - Docker management UI
   portainer:
     extends:
-      file: ../resources/compose/portainer.yaml
+      file: ../../resources/compose/portainer.yaml
       service: portainer
     networks:
-      - lab03
+      - lab02
 
 volumes:
   # Persistent storage for Portainer data
@@ -53,6 +53,6 @@ volumes:
 
 networks:
   # Network for the services to communicate
-  lab03:
+  lab02:
     driver: bridge
 

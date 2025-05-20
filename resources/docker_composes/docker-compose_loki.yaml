@@ -1,0 +1,9 @@
+services:
+  loki:
+      image: grafana/loki:2.9.4
+      restart: unless-stopped
+      ports:
+        - "3100:3100" # Loki API
+      command: -config.file=/etc/loki/local-config.yaml
+      volumes:
+        - ./loki:/etc/loki

@@ -4,4 +4,6 @@
 
 ## Remove any existing containers
 docker-compose down && \
-docker-compose -f docker-compose.yaml up -d
+docker-compose  \
+    --env-file ../../resources/compose/.env \
+    -f docker-compose.yaml up -d

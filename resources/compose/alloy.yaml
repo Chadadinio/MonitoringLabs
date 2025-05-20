@@ -1,0 +1,12 @@
+services:
+  alloy:
+    image: grafana/alloy:latest
+    container_name: alloy
+    command: ["run", "/etc/alloy/config.alloy"]
+    volumes:
+      - ../../resources/configs/alloy-config.alloy:/etc/alloy/config.alloy
+    depends_on:
+      - loki
+      - otel-collector
+    environment:
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4317
